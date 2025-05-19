@@ -85,42 +85,47 @@ async function nutritionSorter() {
 }
 
 async function loadDatabase() {
-    const res = await fetch(`http://localhost:3000/getfruitdb`)
+  const res = await fetch(`http://localhost:3000/getfruitdb`)
     .then((result) => result.json())
     .then((resultJson) => {
-      const tableRow = document.createElement("tr");
-      const nameCell = document.createElement("td");
-      const familyCell = document.createElement("td");
-      const genusCell = document.createElement("td");
-      const orderCell = document.createElement("td");
-      const caloriesCell = document.createElement("td");
-      const carbsCell = document.createElement("td");
-      const proteinCell = document.createElement("td");
-      const fatCell = document.createElement("td");
-      const sugarCell = document.createElement("td");
-      
-      nameCell.textContent = fruit.name;
-      familyCell.textContent = fruit.family;
-      genusCell.textContent = fruit.genus;
-      orderCell.textContent = fruit.order;
-      caloriesCell.textContent = fruit.nutritions.calories;
-      carbsCell.textContent = fruit.nutritions.carbohydrates;
-      proteinCell.textContent = fruit.nutritions.protein;
-      fatCell.textContent = fruit.nutritions.fat;
-      sugarCell.textContent = fruit.nutritions.sugar;
-  
-      tableRow.appendChild(nameCell);
-      tableRow.appendChild(familyCell);
-      tableRow.appendChild(genusCell);
-      tableRow.appendChild(orderCell);
-      tableRow.appendChild(caloriesCell);
-      tableRow.appendChild(carbsCell);
-      tableRow.appendChild(proteinCell);
-      tableRow.appendChild(fatCell);
-      tableRow.appendChild(sugarCell);
-  
-      table.appendChild(tableRow);
-    })
+      const table = document.getElementById("fruitDatabase");
+
+      resultJson.forEach((fruit) => {
+        const tableRow = document.createElement("tr");
+
+        const nameCell = document.createElement("td");
+        const familyCell = document.createElement("td");
+        const genusCell = document.createElement("td");
+        const orderCell = document.createElement("td");
+        const caloriesCell = document.createElement("td");
+        const carbsCell = document.createElement("td");
+        const proteinCell = document.createElement("td");
+        const fatCell = document.createElement("td");
+        const sugarCell = document.createElement("td");
+
+        nameCell.textContent = fruit.name;
+        familyCell.textContent = fruit.family;
+        genusCell.textContent = fruit.genus;
+        orderCell.textContent = fruit.order;
+        caloriesCell.textContent = fruit.calories;
+        carbsCell.textContent = fruit.carbs;
+        proteinCell.textContent = fruit.protein;
+        fatCell.textContent = fruit.fat;
+        sugarCell.textContent = fruit.sugar;
+
+        tableRow.appendChild(nameCell);
+        tableRow.appendChild(familyCell);
+        tableRow.appendChild(genusCell);
+        tableRow.appendChild(orderCell);
+        tableRow.appendChild(caloriesCell);
+        tableRow.appendChild(carbsCell);
+        tableRow.appendChild(proteinCell);
+        tableRow.appendChild(fatCell);
+        tableRow.appendChild(sugarCell);
+
+        table.appendChild(tableRow);
+      });
+    });
 }
 
 window.addEventListener("DOMContentLoaded", () => {
