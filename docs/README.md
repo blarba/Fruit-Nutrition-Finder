@@ -24,4 +24,5 @@ In order to successfully run this app, a Supabase account and setup is required.
 5. Click on the connect button at the top, next to your project name - click on the App Frameworks tab and note down your ***SUPABASE_URL*** and ***SUPABASE_ANON_KEY***, you will need it later.
 6. In VSCode or IDE equivalent, create a new folder and type in the console/terminal ***npm install @supabase/supabase-js***
 7. Once finished, type in the terminal ***npm install express***, ***npm install nodemon***, and ***npm install cors***.
-8. Go ahead and copy the index.js file from here, or create a new index.js in your new folder and copy the code - you will need to change certain parts of the index to fit your setup, and these parts are marked with a comment within the .js file. This is where your SUPABASE_URL and SUPABASE_ANON_KEY are needed.
+8. Go ahead and copy the index.js file from here - the only notable thing here (if you wish to host this on your own side) is to change the SUPABASE_URL and KEY to your own ones given in Supabase, inside the .env folder
+9. 
