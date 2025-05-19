@@ -23,5 +23,5 @@ In order to successfully run this app, a Supabase account and setup is required.
 4. Create a new table, and initialize it with column headers from the Fruityvice API - these would be ***Name, Family, Genus, Order, Calories,	Carbs (g),	Protein (g),	Fat (g),	Sugar (g)***
 5. Click on the connect button at the top, next to your project name - click on the App Frameworks tab and note down your ***SUPABASE_URL*** and ***SUPABASE_ANON_KEY***, you will need it later.
 6. In VSCode or IDE equivalent, create a new folder and type in the console/terminal ***npm install @supabase/supabase-js***
-7. Once finished, type in the terminal ***npm install express*** and ***npm install nodemon***.
+7. Once finished, type in the terminal ***npm install express***, ***npm install nodemon***, and ***npm install cors***.
 8. Go ahead and copy the index.js file from here, or create a new index.js in your new folder and copy the code - you will need to change certain parts of the index to fit your setup, and these parts are marked with a comment within the .js file. This is where your SUPABASE_URL and SUPABASE_ANON_KEY are needed.
