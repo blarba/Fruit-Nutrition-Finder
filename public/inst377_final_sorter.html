@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Nutrition Sorter - INST377 Final</title>
+        <link rel="stylesheet" href="inst377_final.css">
+        <script src="inst377_final.js" defer></script>
+    </head>
+
+    <body style="background-color: rgb(193, 241, 193)">
+        <div class = "header">
+            <h1>Fruit Nutrition Finder</h1>
+        </div>
+
+        <div class = "nav">
+            <a href="inst377_final_home.html">Home</a>
+            <a href="inst377_final_finder.html">Fruit Finder</a>
+            <a href="inst377_final_sorter.html">Nutrition Sorter</a>
+            <a href="inst377_final_database.html">Fruit Database</a>
+            <a href="inst377_final_about.html">About</a>
+        </div>
+
+        <div class = "main">
+            <h2>How to use:</h2>
+            <p>Search by the type of nutrient in the drop down box</p>
+            <p>Then filter by the minimum and maximum amount you want to see per fruit</p>
+            <p>If nothing comes up, no fruits match the criteria :&#40;</p>
+        </div>
+
+        <div class = "sorter">
+            <h2>Nutrition Sorter</h2>
+            <label for="nutrient">Nutrient:</label>
+            <select id="nutrient">
+              <option value="carbohydrates">Carbohydrates</option>
+              <option value="protein">Protein</option>
+              <option value="fat">Fat</option>
+              <option value="calories">Calories</option>
+              <option value="sugar">Sugar</option>
+            </select>
+
+            <label for="min">Min:</label>
+            <input type="number" id="min" value="0" />
+            <label for="max">Max:</label>
+            <input type="number" id="max" value="100" />
+            
+            <button onclick="nutritionSorter()">Filter</button>
+            <div id="nutritionTable"></div>
+        </div>
+
+    </body>
+
+</html>

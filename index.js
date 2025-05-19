@@ -15,6 +15,10 @@ const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey);
 
+app.get('/', (req, res) => {
+    res.sendFile('public/inst377_final_database.html', { root: __dirname });
+});
+
 app.get('/getfruitdb', async (req, res) => {
     console.log('Attempting to GET fruit_table');
 

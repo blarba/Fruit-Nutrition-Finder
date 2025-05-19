@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Fruit Finder - INST377 Final</title>
+        <link rel="stylesheet" href="inst377_final.css">
+        <script src="inst377_final.js" defer></script>
+    </head>
+
+    <body style="background-color: rgb(193, 241, 193)">
+        <div class = "header">
+            <h1>Fruit Nutrition Finder</h1>
+        </div>
+
+        <div class = "nav">
+            <a href="inst377_final_home.html">Home</a>
+            <a href="inst377_final_finder.html">Fruit Finder</a>
+            <a href="inst377_final_sorter.html">Nutrition Sorter</a>
+            <a href="inst377_final_database.html">Fruit Database</a>
+            <a href="inst377_final_about.html">About</a>
+        </div>
+
+        <div class = "main">
+            <h2>How to use:</h2>
+            <p>Search by fruit name, family, genus, or order</p>
+            <p>try to capitalize the first letter to match database syntax</p>
+            <p>If nothing comes up, it doesn't exist in the database :&#40;</p>
+        </div>
+
+        <div class = "finder">
+            <h2>Fruit Finder</h2>
+            <input type="text" id="fruitQuery" placeholder="Search by name, family, genus, or order" />
+            <button onclick="fruitFinder()">Search</button>
+            <div id="searchTable"></div>
+        </div>
+
+
+        
+    </body>
+
+</html>
