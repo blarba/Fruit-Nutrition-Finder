@@ -3,6 +3,7 @@ const supabaseClient = require('@supabase/supabase-js');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
+const cors = require('cors');
 
 // change port if needed
 const app = express();
@@ -71,3 +72,12 @@ app.post('/fruit', async (req, res) => {
 app.listen(port, () => {
   console.log('app is up and running on port', port);
 });
+
+app.use(cors({
+    origin: 'http://127.0.0.1:5500',
+    methods: ['GET', 'POST', 'OPTIONS', 'FETCH'],
+    allowedHeaders: ['Content-Type']
+}));
+  
+app.use(express.json());
+app.use(express.static(__dirname + '/public'));

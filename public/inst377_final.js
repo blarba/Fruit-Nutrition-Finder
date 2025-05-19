@@ -1,4 +1,5 @@
 const baseURL = "https://www.fruityvice.com/api/fruit";
+const host = "http://localhost:3000";
 
 function displayResults(containerId, data) {
     const container = document.getElementById(containerId);
@@ -84,11 +85,45 @@ async function nutritionSorter() {
     displayResults("nutritionTable", data);
 }
 
+async function createFruit() {
+    await fetch(`${host}/fruit`, {
+        method: 'POST',
+        body: JSON.stringify({
+            name: `${document.getElementById('name').value}`,
+            family: `${document.getElementById('family').value}`,
+            genus: `${document.getElementById('genus').value}`,
+            order: `${document.getElementById('order').value}`,
+            calories: parseFloat(document.getElementById('calories').value),
+            carbs: parseFloat(document.getElementById('carbs').value),
+            protein: parseFloat(document.getElementById('protein').value),
+            fat: parseFloat(document.getElementById('fat').value),
+            sugar: parseFloat(document.getElementById('sugar').value),
+        }),
+        headers: {
+            'content-type': 'application/json',
+        },
+    }).then((result) => result.json());
+
+    await loadDatabase();
+}
+
 async function loadDatabase() {
   const res = await fetch(`http://localhost:3000/getfruitdb`)
     .then((result) => result.json())
     .then((resultJson) => {
-      const table = document.getElementById("fruitDatabase");
+      const table = document.createElement("table");
+      table.className = "table";
+      table.id = "fruitDatabase";
+  
+      const headerRow = document.createElement("tr");
+      const headers = ["Name", "Family", "Genus", "Order", "Calories", "Carbs (g)", "Protein (g)", "Fat (g)", "Sugar (g)"];
+      headers.forEach(header => {
+        const th = document.createElement("th");
+        th.textContent = header;
+        headerRow.appendChild(th);
+      });
+  
+      table.appendChild(headerRow);
 
       resultJson.forEach((fruit) => {
         const tableRow = document.createElement("tr");
@@ -125,9 +160,17 @@ async function loadDatabase() {
 
         table.appendChild(tableRow);
       });
+
+      const preExistingTable = document.getElementById('fruitDatabase');
+      if (preExistingTable) {
+        preExistingTable.remove();
+      }
+      document.body.appendChild(table);
     });
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  if(document.getElementById('fruitDatabase')) {
     loadDatabase();
-  });
+  }
+});

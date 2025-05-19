@@ -27,6 +27,7 @@
     margin: auto;
     border: 1px solid;
     max-width: 600px;
+    background-color:rgb(173, 231, 217)
 }
 
 .finder,
@@ -39,6 +40,7 @@
     margin: auto;
     border-collapse: collapse;
     border: 2px solid;
+    background-color: #f2f2f2;
 }
 
 .table th,

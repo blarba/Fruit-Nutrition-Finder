@@ -21,15 +21,18 @@
         <div class = "main">
             <p>
                 This is just a simple website utilizing the Fruityvice API and some of its fetch calls
-                to gather information on fruits of your choosing. It uses several calls, which are:
+                to gather information on fruits of your choosing, and providing a simple database that others can edit. It uses several calls, which are:
                 <ul>
                     <li>api/fruit/{name} - searches for the fruit name</li>
                     <li>/api/fruit/family/{family name} - searches for all fruits with family name</li>
                     <li>/api/fruit/genus/{genus} - searches for all genus of same name</li>
                     <li>/api/fruit/order/{order} - searches for all fruits within the given order</li>
                     <li>/api/fruit/{nutrition}?min=0&max=1000 - searches for a nutrition category and filters</li>
-                    <li>/api/fruit/all - gets all fruits in the database</li>
+                    
                 </ul>
+                The fruit database is actually a locally hosted database on Supabase, with the original data from Fruityvice imported in as a base. 
+                This allows users to add in their own fruits into the database and have it update in real time. 
+                The downside of this is that the Fruit Finder and Nutrition Sorter do not have access to newly added fruits as they use API calls directly from Fruityvice and not the local Supabase.
             </p>
         </div>
     </body>
