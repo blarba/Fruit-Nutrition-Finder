@@ -30,7 +30,8 @@ In order to successfully run this app, a Supabase account and setup is required.
 11. Go ahead and copy the index.js file from here - the only notable thing here (if you wish to host this on your own side) is to change the SUPABASE_URL and KEY to your own ones given in Supabase, inside the .env folder
 12. Log into Vercel using your GitHub account, and when asked to import a Git Repository, select this one, no changes is the settings is needed
 13. Vercel should automatically deploy the repo and start hosting, use the url in the Domains category, not Deployment
-14. You should be all set! sometimes CORS can be finnicky and prevent edits to Supabase when it's turned on, so if you plan on editing your table in Supabase turn CORS off first, then turn it back on when you finish
+14. When you run the app, make sure to run ***npm start***, otherwise Supabase can't fetch its table
+15. You should be all set! sometimes CORS can be finnicky and prevent edits to Supabase when it's turned on, so if you plan on editing your table in Supabase turn CORS off first, then turn it back on when you finish
 
 ### API Calls
 there are a couple APIs in the server application endpoints, listed below:
