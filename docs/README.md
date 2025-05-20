@@ -5,7 +5,7 @@ This is the Fruit Nutrition Finder - a simple project that makes use of the Frui
 The website has several pages - the home and about pages are self-explanatory and talk a little bit about how to use the website and the functionality of the other pages.
 The Fruit Finder tab lets you search for a fruit in the Fruityvice database by its name, family, genus, or order, and returns all fruits (if possible) containing the search term.
 The Nutrition Sorter searches for a particular nutrient (like carbs, protein, fat, etc.) and filters search results based on a minimum and maximum value inputted by the user.
-The Fruit Database simply loads all available fruits within the Fruityvice database.
+The Fruit Database loads all available fruits within Supabase's own table of data, which contains data imported from Fruityvice.
 The project makes use of Supabase to hold a live database that the website retrieves data from, and also allows real-time editing of the database values to update the website simultaneously.
 Vercel is also used to be able to deploy the webapp and be able to host the website and have it run on a real, local server.
 
